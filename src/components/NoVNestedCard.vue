@@ -5,7 +5,7 @@
     :outlined="!outlined"
     style="height: auto"
   ).py-2.text-center
-    strong.mx-2.black--text {{ item.id }}
+    strong.mx-2.black--text {{ item.text }}
     template(v-if="Array.isArray(item.children)")
       no-v-nested-card(
         v-for="nested in item.children"

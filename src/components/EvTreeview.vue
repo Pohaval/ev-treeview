@@ -9,6 +9,7 @@ v-list(
       v-if="item.children && item.children.length"
       :value="nestedValue(item)"
       :item="item"
+      group
       v-bind="nestedAttrs"
       :key="`${key}-group`"
       @input="(val) => onInput(val, item)"
@@ -152,3 +153,7 @@ export default {
   },
 };
 </script>
+
+<style>
+
+</style>

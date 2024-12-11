@@ -6,7 +6,7 @@
     @click="toggle"
   )
     template(v-slot:default="{ active }")
-      v-list-item-action: v-checkbox(:input-value="active" color="purple") mdi-close
+      v-list-item-action: v-checkbox(:input-value="active" color="purple")
       v-list-item-title {{ item[itemText] }}
 </template>
 <script>

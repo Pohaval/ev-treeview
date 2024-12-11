@@ -1,10 +1,11 @@
 <template lang="pug">
-v-list-group.px-0(
+v-list-group.px-0.pl-0(
   color="null"
   light
+  v-bind="$attrs"
 )
   template(v-slot:activator)
-    v-list-item-action
+    v-list-item-action.mr-8
       v-checkbox(
         light
         color="purple"
@@ -76,16 +77,18 @@ export default {
   },
   computed: {
     allSelected() {
+      let res;
       if (this.multiple) {
-        return !!this.selected && (this.selected.length === this.item.children.length);
-      }
-      return !!this.selected
+        res = !!this.selected && (this.selected.length === this.item.children.length);
+      } else res = !!this.selected
+      return res && (this.$refs.nested ? this.$refs.nested.every(({allSelected}) => allSelected) : true);
     },
     indeterminate() {
+      let res;
       if (this.multiple) {
-        return this.selected && (this.selected.length > 0 && this.selected.length < this.item.children.length);
-      }
-      return false;
+        res = this.selected && (this.selected.length > 0 && this.selected.length < this.item.children.length);
+      } else res = false;
+      return res || (this.$refs.nested ? this.$refs.nested.every(({indeterminate}) => indeterminate) : false);
     }
   },
   watch: {

@@ -52,53 +52,53 @@ export default {
   data() {
     return {
       selected: [
-        {
-          id: 1,
-          text: 'Hello',
-          children: [],
-        },
-        {
-          id: 3,
-          text: 'Hello World',
-          opt: {
+        // {
+        //   id: 1,
+        //   text: 'Hello',
+        //   children: [],
+        // },
+        // {
+        //   id: 3,
+        //   text: 'Hello World',
+        //   opt: {
 
-          },
-          children: [
-            {
-              id: 4,
-              text: 'Nested Hello World',
-              children: [],
-            },
+        //   },
+        //   children: [
+        //     {
+        //       id: 4,
+        //       text: 'Nested Hello World',
+        //       children: [],
+        //     },
 
-          ],
-        },
-        {
-          id: 6,
-          text: "Hello Worlds",
-          children: [
-            {
-              id: 8,
-              text: "Nested Hello Worlds",
-              children: [
-                {
-                  id: 1,
-                  text: "Nested nested Hello World",
-                  children: []
-                },
-                {
-                  id: 7,
-                  text: 'Nested nested Hello World',
-                  children: [],
-                },
-              ],
-            },
-            {
-              id: 7,
-              text: 'Nested Hello World',
-              children: [],
-            },
-          ],
-        }
+        //   ],
+        // },
+        // {
+        //   id: 6,
+        //   text: "Hello Worlds",
+        //   children: [
+        //     {
+        //       id: 8,
+        //       text: "Nested Hello Worlds",
+        //       children: [
+        //         {
+        //           id: 1,
+        //           text: "Nested nested Hello World",
+        //           children: []
+        //         },
+        //         {
+        //           id: 7,
+        //           text: 'Nested nested Hello World',
+        //           children: [],
+        //         },
+        //       ],
+        //     },
+        //     {
+        //       id: 7,
+        //       text: 'Nested Hello World',
+        //       children: [],
+        //     },
+        //   ],
+        // }
       ],
       items: [
         {
@@ -114,14 +114,12 @@ export default {
         {
           id: 3,
           text: 'Hello World',
-          opt: {
-
-          },
           children: [
             {
               id: 4,
               text: 'Nested Hello World',
               children: [],
+              shrek: 1,
             },
             {
               id: 5,
@@ -140,7 +138,7 @@ export default {
               children: [],
             },
             {
-              id: 8,
+              id: 6,
               text: 'Nested Hello Worlds',
               children: [
                 {
@@ -156,7 +154,18 @@ export default {
                 {
                   id: 7,
                   text: 'Nested nested Hello World',
-                  children: [],
+                  children: [
+                    {
+                      id: 1,
+                      text: 'Nested nested Hello World',
+                      children: [],
+                    },
+                    {
+                      id: 6,
+                      text: 'Nested nested Hello World',
+                      children: [],
+                    },
+                  ],
                 },
               ],
             },
