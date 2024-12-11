@@ -93,11 +93,13 @@ export default {
       immediate: true,
       deep: true,
       handler(val) {
-        if (!val) this.selected = null;
+        const children = val?.children?.length ? val.children : null;
+        this.selected = val ? children : null;
       },
     },
   },
   methods: {
+
     nestedValue(item) {
       if (this.selected) {
         if (this.multiple) {

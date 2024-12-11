@@ -75,6 +75,13 @@ export default {
   },
 
   watch: {
+    value: {
+      deep: true,
+      immediate: true,
+      handler(val) {
+        this.selected = val;
+      },
+    },
     selected: {
       deep: true,
       handler(val) {
@@ -90,21 +97,13 @@ export default {
           if (idx !== -1) return this.selected[idx]
         }
         if (this.selected[this.itemValue] === item[this.itemValue]) {
-          return item;
+          return this.selected;
         }
         return null;
       }
       return null;
     },
-    setExtendedItems() {
-      this.extendedItems = this.items.map((item) => ({
-        value: item[this.itemValue],
-        item,
-        opt: {
-          active: false,
-        },
-      }));
-    },
+
     checkSelected(item) {
       const { selected, multiple } = this;
       if (multiple) {
